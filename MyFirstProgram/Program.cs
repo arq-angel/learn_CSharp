@@ -1,10 +1,49 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-// constants = immutable values which are known at compile time
-//             and do not change for the life of the program
+// type casting = Converting a value to a different data type
+//                Useful when we accept user input (string)
+//                Different data types can do different things
 
-const double pi = 3.14159;
+double a = 3.14;
 
-Console.WriteLine(pi);
+int b = Convert.ToInt32(a);
+
+Console.WriteLine(b);
+
+Console.WriteLine(a.GetTypeCode());
+
+Console.WriteLine(b.GetTypeCode());
+
+int c = 123;
+
+double d = Convert.ToDouble(c) + 0.1;
+
+Console.WriteLine(d);
+
+Console.WriteLine(d.GetTypeCode());
+
+int e = 321;
+
+string f = Convert.ToString(e);
+
+Console.WriteLine(f);
+
+Console.WriteLine(f.GetTypeCode());
+
+string g = "$";
+
+char h = Convert.ToChar(g);
+
+Console.WriteLine(h);
+
+Console.WriteLine(h.GetTypeCode());
+
+string i = "true";
+
+bool j = Convert.ToBoolean(i);
+
+Console.WriteLine(j);
+
+Console.WriteLine(j.GetTypeCode());
 
 Console.ReadKey();
