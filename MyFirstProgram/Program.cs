@@ -1,26 +1,33 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-int friends = 5;
+double x = 3;
 
-// friends = friends + 1;
-// friends += 1;
-// friends++;
+// double a = Math.Pow(x, 3);
 
-// friends = friends - 1;
-// friends -= 1;
-// friends--;
+// double b = Math.Sqrt(x);
 
-// friends = friends * 2;
-// friends *= 2;
+// double c = Math.Abs(x);
 
-// friends = friends / 2;
-// friends /= 2;
+// x = 3.14;
+x = 3.99;
+// double d = Math.Round(x);
 
-friends = 10;
+// double e = Math.Ceiling(x);
 
-int remainder = friends % 3;
+// double f = Math.Floor(x);
 
-Console.WriteLine(friends);
-Console.WriteLine(remainder);
+double y = 5;
+
+// double g = Math.Max(x, y);
+double h = Math.Min(x, y);
+
+// Console.WriteLine(a);
+// Console.WriteLine(b);
+// Console.WriteLine(c);
+// Console.WriteLine(d);
+// Console.WriteLine(e);
+// Console.WriteLine(f);
+// Console.WriteLine(g);
+Console.WriteLine(h);
 
 Console.ReadKey();
