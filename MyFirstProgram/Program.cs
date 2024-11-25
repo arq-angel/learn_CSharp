@@ -1,36 +1,21 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-// switch - an efficient alternative to many else if statements
+// logical operators - Can be used to check if more than 2 condition is true/false
 
-Console.WriteLine("What day is it today?");
-String day = Console.ReadLine();
+// && (AND)
+// || (OR)
 
-switch (day)
+Console.WriteLine("What's the temperature outside: (C)");
+double temp = Convert.ToDouble(Console.ReadLine());
+
+if (temp >= 10 && temp <= 25)
 {
-    case "Monday":
-        Console.WriteLine("It's Monday!");
-        break;
-    case "Tuesday":
-        Console.WriteLine("It's Tuesday!");
-        break;
-    case "Wednesday":
-        Console.WriteLine("It's Wednesday!");
-        break;
-    case "Thursday":
-        Console.WriteLine("It's Thursday!");
-        break;
-    case "Friday":
-        Console.WriteLine("It's Friday!");
-        break;
-    case "Saturday":
-        Console.WriteLine("It's Saturday!");
-        break;
-    case "Sunday":
-        Console.WriteLine("It's Sunday!");
-        break;
-    default:
-        Console.WriteLine(day + " is not a day!");
-        break;
+    Console.WriteLine("It's warm outside!");
 }
+else if (temp <= -50 || temp >= 50)
+{
+    Console.WriteLine("DO NOT GO OUTSIDE!");
+}
+
 
 Console.ReadKey();
