@@ -1,29 +1,37 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-String fullName = "John Doe";
-String phoneNumber = "555-555-5555";
+// if statement = a basic form of decision making
 
-// fullName = fullName.ToUpper();
-// fullName = fullName.ToLower();
+// Console.WriteLine("Please enter your age: ");
+// int age = Convert.ToInt32(Console.ReadLine());
+//
+// if (age > 100)
+// {
+//     Console.WriteLine("You are too old to sign up!");
+// }
+// else if (age >= 18)
+// {
+//     Console.WriteLine("You are now signed up!");
+// }
+// else if (age < 0)
+// {
+//     Console.WriteLine("You haven't been born yet!");
+// }
+// else
+// {
+//     Console.WriteLine("You must be 18+ to sign up!");
+// }
 
-// Console.WriteLine(fullName);
+Console.WriteLine("Please enter your name: ");
+String name = Console.ReadLine();
 
-// phoneNumber = phoneNumber.Replace("-", "");
-
-// Console.WriteLine(phoneNumber);
-
-// String userName = fullName.Insert(0, "Mr.");
-
-// Console.WriteLine(userName);
-
-// Console.WriteLine(fullName.Length);
-
-String firstName = fullName.Substring(0, 4);
-
-Console.WriteLine(firstName);
-
-String lastName = fullName.Substring(5, 3);
-
-Console.WriteLine(lastName);
+if (name != "")
+{
+    Console.WriteLine("Hello, " + name);
+}
+else
+{
+    Console.WriteLine("You did not enter your name!");
+}
 
 Console.ReadKey();
