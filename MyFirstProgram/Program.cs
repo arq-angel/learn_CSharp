@@ -1,12 +1,26 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Console.WriteLine("What's your name?");
-String name = Console.ReadLine();
+int friends = 5;
 
-Console.WriteLine("What's your age?");
-int age = Convert.ToInt32(Console.ReadLine());
+// friends = friends + 1;
+// friends += 1;
+// friends++;
 
-Console.WriteLine("Hello " + name + "!");
-Console.WriteLine("You are " + age + " years old.");
+// friends = friends - 1;
+// friends -= 1;
+// friends--;
+
+// friends = friends * 2;
+// friends *= 2;
+
+// friends = friends / 2;
+// friends /= 2;
+
+friends = 10;
+
+int remainder = friends % 3;
+
+Console.WriteLine(friends);
+Console.WriteLine(remainder);
 
 Console.ReadKey();
