@@ -1,16 +1,25 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-// for loop = repeats some code a FINITE amount of times
+// nested loops = loops inside of other loops
+//                Uses vary. Used a lot in sorting algorithms
 
-/*for (int i = 1; i <= 10; i++)
-{
-    Console.WriteLine(i);
-}*/
+Console.WriteLine("How many rows?: ");
+int rows = Convert.ToInt32(Console.ReadLine());
 
-for (int i = 10; i > 0; i--)
+Console.WriteLine("How many columns?: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+
+Console.WriteLine("What symbol?: ");
+String symbol = Console.ReadLine();
+
+for (int i = 0; i < rows; i++)
 {
-    Console.WriteLine(i);
+    for (int j = 0; j < columns; j++)
+    {
+        Console.Write(symbol);
+    }
+    Console.WriteLine();
 }
-Console.WriteLine("HAPPY NEW YEAR!");
+
 
 Console.ReadKey();
