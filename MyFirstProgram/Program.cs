@@ -1,33 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-double x = 3;
+Random random = new Random();
 
-// double a = Math.Pow(x, 3);
+// int num = random.Next(1, 21);
 
-// double b = Math.Sqrt(x);
+// double num = random.NextDouble();
 
-// double c = Math.Abs(x);
+int num1 = random.Next(1, 7);
+int num2 = random.Next(1, 7);
+int num3 = random.Next(1, 7);
 
-// x = 3.14;
-x = 3.99;
-// double d = Math.Round(x);
-
-// double e = Math.Ceiling(x);
-
-// double f = Math.Floor(x);
-
-double y = 5;
-
-// double g = Math.Max(x, y);
-double h = Math.Min(x, y);
-
-// Console.WriteLine(a);
-// Console.WriteLine(b);
-// Console.WriteLine(c);
-// Console.WriteLine(d);
-// Console.WriteLine(e);
-// Console.WriteLine(f);
-// Console.WriteLine(g);
-Console.WriteLine(h);
+Console.WriteLine(num1);
+Console.WriteLine(num2);
+Console.WriteLine(num3);
 
 Console.ReadKey();
