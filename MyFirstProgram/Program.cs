@@ -1,16 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-// while loop = repeats some code while some condition remains true
+// for loop = repeats some code a FINITE amount of times
 
-String name = "";
-
-while (name == "")
+/*for (int i = 1; i <= 10; i++)
 {
-    Console.Write("Enter your name: ");
-    name = Console.ReadLine();
+    Console.WriteLine(i);
+}*/
+
+for (int i = 10; i > 0; i--)
+{
+    Console.WriteLine(i);
 }
-
-Console.WriteLine("Hello, " + name);
-
+Console.WriteLine("HAPPY NEW YEAR!");
 
 Console.ReadKey();
