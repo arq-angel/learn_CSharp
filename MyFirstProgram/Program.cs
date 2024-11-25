@@ -1,21 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-// logical operators - Can be used to check if more than 2 condition is true/false
+// while loop = repeats some code while some condition remains true
 
-// && (AND)
-// || (OR)
+String name = "";
 
-Console.WriteLine("What's the temperature outside: (C)");
-double temp = Convert.ToDouble(Console.ReadLine());
-
-if (temp >= 10 && temp <= 25)
+while (name == "")
 {
-    Console.WriteLine("It's warm outside!");
+    Console.Write("Enter your name: ");
+    name = Console.ReadLine();
 }
-else if (temp <= -50 || temp >= 50)
-{
-    Console.WriteLine("DO NOT GO OUTSIDE!");
-}
+
+Console.WriteLine("Hello, " + name);
 
 
 Console.ReadKey();
