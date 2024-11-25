@@ -1,13 +1,29 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Console.WriteLine("Enter side A: ");
-double a = Convert.ToDouble(Console.ReadLine());
+String fullName = "John Doe";
+String phoneNumber = "555-555-5555";
 
-Console.WriteLine("Enter side B: ");
-double b = Convert.ToDouble(Console.ReadLine());
+// fullName = fullName.ToUpper();
+// fullName = fullName.ToLower();
 
-double c = Math.Sqrt((a * a) + (b * b));
+// Console.WriteLine(fullName);
 
-Console.WriteLine("The hypotenuse is: " + c);
+// phoneNumber = phoneNumber.Replace("-", "");
+
+// Console.WriteLine(phoneNumber);
+
+// String userName = fullName.Insert(0, "Mr.");
+
+// Console.WriteLine(userName);
+
+// Console.WriteLine(fullName.Length);
+
+String firstName = fullName.Substring(0, 4);
+
+Console.WriteLine(firstName);
+
+String lastName = fullName.Substring(5, 3);
+
+Console.WriteLine(lastName);
 
 Console.ReadKey();
