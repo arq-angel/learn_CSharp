@@ -1,38 +1,19 @@
-﻿class MyFirstProgram
+﻿using System;
+
+namespace MyFirstProgram
 {
-    static void Main(string[] args)
+    class Program
     {
-        String[] ford = { "Mustang", "F-150", "Explorer" };
-        String[] chevy = {"Corvette", "Camaro", "Silverado"};
-        String[] toyota = {"Corolla", "Camry", "Rav4"};
-
-        String[,] parkingLot =
+        static void Main(string[] args)
         {
-            { "Mustang", "F-150", "Explorer" }, 
-            { "Corvette", "Camaro", "Silverado" }, 
-            {"Corolla", "Camry", "Rav4"}
-        }; 
+            // class = A bundle of related code
+            //         Can be used as a blueprint to create objects (OOP)
 
-        parkingLot[0, 2] = "Fusion";
-        parkingLot[2, 0] = "Tacoma";
-
-        /*
-         foreach (String car in parkingLot)
-        {
-            Console.WriteLine(car);
-        }
-        */
-
-        for (int i = 0; i < parkingLot.GetLength(0); i++)
-        {
-            for (int j = 0; j < parkingLot.GetLength(1); j++)
-            {
-                Console.Write(parkingLot[i, j] + " ");
-            }
-            Console.WriteLine();
-        }
+            Messages.Hello();
+            Messages.Waiting();
+            Messages.Bye();
         
-        Console.ReadKey();
+            Console.ReadKey();
+        }
     }
 }
-// See https://aka.ms/new-console-template for more information
