@@ -6,41 +6,35 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            // method overriding = provides a new version of a method inherited from a parent class
-            //                     inherited method must be: abstract, virtual, or already overriden
-            //                     Used with ToString(), polymorphism
-            
-            Dog dog = new Dog();
-            Cat cat = new Cat();
-            
-            dog.Speak();
-            cat.Speak();
+            // ToString() = converts an object to its string representation so that it is suitable for display
+
+            Car car = new Car("Chevy", "Corvette", 2022, "blue");
+
+            // Console.WriteLine(car.ToString());
+            Console.WriteLine(car);
             
             Console.ReadKey();
         }
     }
 
-    class Animal
+    class Car
     {
-        public virtual void Speak()
-        {
-            Console.WriteLine("The animal goes *brrr*");
-        }
-    }
+        private String make;
+        private String model;
+        private int year;
+        private String color;
 
-    class Dog : Animal
-    {
-        public override void Speak()
+        public Car(String make, String model, int year, String color)
         {
-            Console.WriteLine("The dog goes *woof*");
+            this.make = make;
+            this.model = model;
+            this.year = year;
+            this.color = color;
         }
-    }
 
-    class Cat : Animal
-    {
-        public override void Speak()
+        public override string ToString()
         {
-            Console.WriteLine("The dog goes *meow*");
+            return "This is a " + make + " " + model;
         }
     }
 }
