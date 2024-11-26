@@ -6,54 +6,63 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            // polymorphism = Greek word that means to have many forms
-            //                Objects can be identified by more than one type
-            //                Ex. A Dog is also: Canine, Animal, Organism
+            // interface = defines a "contract" that all the classes inheriting from should follow
             
-            Car car = new Car();
-            Bicycle bicycle = new Bicycle();
-            Boat boat = new Boat();
+            //             An interface declares "What a class should have"
+            //             An inheriting class defines "how it should do it"
             
-            Vehicle[] vehicles = { car, bicycle, boat };
-
-            foreach (Vehicle vehicle in vehicles)
-            {
-                vehicle.Go();
-            }
+            //             Benefit = security + multiple inheritance + "plug-and-play" 
+            
+            Rabbit rabbit = new Rabbit();
+            Hawk hawk = new Hawk();
+            Fish fish = new Fish();
+            
+            hawk.Hunt();
+            rabbit.Flee();
+            
+            fish.Hunt();
+            fish.Flee();
             
             Console.ReadKey();
         }
     }
 
-    class Vehicle
+    interface IPrey
     {
-        public virtual void Go()
+        void Flee();
+    }
+
+    interface IPredator
+    {
+        void Hunt();
+    }
+
+    class Rabbit : IPrey
+    {
+        public void Flee()
         {
-            
+            Console.WriteLine("The rabbit runs away");
         }
     }
 
-    class Car : Vehicle
+    class Hawk : IPredator
     {
-        public override void Go()
+        public void Hunt()
         {
-            Console.WriteLine("The car is moving");
+            Console.WriteLine("The hawk is searching for food");
         }
     }
 
-    class Bicycle : Vehicle
+    class Fish : IPrey, IPredator
     {
-        public override void Go()
+        public void Hunt()
         {
-            Console.WriteLine("The bicycle is moving");
+            Console.WriteLine("The fish is searching for smaller fish");
         }
-    }
 
-    class Boat : Vehicle
-    {
-        public override void Go()
+        public void Flee()
         {
-            Console.WriteLine("The boat is moving");
+            Console.WriteLine("The fish swims away");
         }
     }
 }
