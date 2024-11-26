@@ -4,28 +4,27 @@ class MyFirstProgram
 {
     static void Main(string[] args)
     {
-        // return = returns data back to the place where a method is invoked
+        // method overloading = methods share same name, but different parameters
+        //                      name + parameters - signature
+        //                      methods must have a unique signature
 
-        double x;
-        double y;
-        double result;
-        
-        Console.Write("Enter in number 1: ");
-        x = Convert.ToDouble(Console.ReadLine());
-        
-        Console.Write("Enter in number 2: ");
-        y = Convert.ToInt32(Console.ReadLine());
+        double total;
 
-        result = Multiply(x, y);
+        total = Multiply(2, 3, 4);
         
-        Console.WriteLine(result);
-
+        Console.WriteLine(total);
+        
         Console.ReadKey();
     }
 
-    static double Multiply(double x, double y)
+    static double Multiply(double a, double b)
     {
-        return x * y;
+        return a * b;
+    }
+    
+    static double Multiply(double a, double b, double c)
+    {
+        return a * b * c;
     }
     
 }
