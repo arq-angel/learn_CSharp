@@ -2,27 +2,47 @@
 {
     static void Main(string[] args)
     {
-        // params keyword = a method parameter that takes a variable number of arguments
-        //                  The parameter type must be a single - dimensional array
+        // exception = errors that occur during execution
 
-        double total = CheckOut(3.99, 5.75, 15, 1.00, 10.25);
-        
-        Console.WriteLine("Total total: " + total);
-        
-        Console.ReadKey();
-    }
+        //          try =       try some code that is considered "dangerous"
+        //          catch =     catches and handles exceptions when they occur
+        //          finally =   always executes regardless if exception is caught or not
 
-    static double CheckOut(params double[] prices)
-    {
-        double total = 0;
+        double x;
+        double y;
+        double result;
 
-        foreach (double price in prices)
+        try
         {
-            total += price;
+            Console.Write("Enter number 1: ");
+            x = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter number 2: ");
+            y = Convert.ToDouble(Console.ReadLine());
+
+            result = x / y;
+
+            Console.WriteLine("Result: " + result);
         }
-        
-        return total;
+        catch (FormatException e)
+        {
+            Console.WriteLine("Enter ONLY numbers PLEASE!");
+        }
+        catch (DivideByZeroException e)
+        {
+            Console.WriteLine("You can't divide by zero! IDIOT!");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Something went wrong!");
+        }
+        finally
+        {
+            Console.WriteLine("Thanks for visiting!");
+        }
+
+
+        Console.ReadKey();
     }
 }
 // See https://aka.ms/new-console-template for more information
-
