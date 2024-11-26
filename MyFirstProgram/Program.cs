@@ -2,45 +2,28 @@
 {
     static void Main(string[] args)
     {
-        // exception = errors that occur during execution
+        // conditional operator = used in conditional assignment iif a condition is true/false
+        
+        // (condition) ? x : y
+        
+        double temperature = 20;
+        String message;
 
-        //          try =       try some code that is considered "dangerous"
-        //          catch =     catches and handles exceptions when they occur
-        //          finally =   always executes regardless if exception is caught or not
-
-        double x;
-        double y;
-        double result;
-
-        try
+        if (temperature >= 15)
         {
-            Console.Write("Enter number 1: ");
-            x = Convert.ToDouble(Console.ReadLine());
-
-            Console.Write("Enter number 2: ");
-            y = Convert.ToDouble(Console.ReadLine());
-
-            result = x / y;
-
-            Console.WriteLine("Result: " + result);
+            message = "It's warm outside!";
         }
-        catch (FormatException e)
+        else
         {
-            Console.WriteLine("Enter ONLY numbers PLEASE!");
+            message = "It's cold outside!";
         }
-        catch (DivideByZeroException e)
-        {
-            Console.WriteLine("You can't divide by zero! IDIOT!");
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine("Something went wrong!");
-        }
-        finally
-        {
-            Console.WriteLine("Thanks for visiting!");
-        }
-
+        Console.WriteLine(message);
+        
+        message = (temperature >= 15) ? "It's warm outside!" : "It's cold outside!";
+        
+        Console.WriteLine(message);
+        
+        Console.WriteLine((temperature >= 15) ? "It's warm outside!" : "It's cold outside!");
 
         Console.ReadKey();
     }
