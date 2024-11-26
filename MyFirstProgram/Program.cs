@@ -1,22 +1,12 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-// array = a variable that can store multiple values. fixed size
+// foreach loop = a simpler way to iterate over an array, but it's less flexible
 
-// String[] cars = { "BMW", "Mustang", "Corvette" };
+String[] cars = { "BMW", "Mustang", "Corvette" };
 
-String[] cars = new string[3];
-
-cars[0] = "Tesla";
-cars[1] = "Mustang";
-cars[2] = "Corvette";
-
-/*Console.WriteLine(cars[0]);
-Console.WriteLine(cars[1]);
-Console.WriteLine(cars[2]);*/
-
-for (int i = 0; i < cars.Length; i++)
+foreach (String car in cars)
 {
-    Console.WriteLine(cars[i]);
+    Console.WriteLine(car);
 }
 
 Console.ReadKey();
