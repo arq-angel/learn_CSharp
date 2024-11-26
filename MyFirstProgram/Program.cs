@@ -1,32 +1,28 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-class MyFirstProgram
+﻿class MyFirstProgram
 {
     static void Main(string[] args)
     {
-        // method overloading = methods share same name, but different parameters
-        //                      name + parameters - signature
-        //                      methods must have a unique signature
+        // params keyword = a method parameter that takes a variable number of arguments
+        //                  The parameter type must be a single - dimensional array
 
-        double total;
-
-        total = Multiply(2, 3, 4);
+        double total = CheckOut(3.99, 5.75, 15, 1.00, 10.25);
         
-        Console.WriteLine(total);
+        Console.WriteLine("Total total: " + total);
         
         Console.ReadKey();
     }
 
-    static double Multiply(double a, double b)
+    static double CheckOut(params double[] prices)
     {
-        return a * b;
-    }
-    
-    static double Multiply(double a, double b, double c)
-    {
-        return a * b * c;
-    }
-    
-}
+        double total = 0;
 
+        foreach (double price in prices)
+        {
+            total += price;
+        }
+        
+        return total;
+    }
+}
+// See https://aka.ms/new-console-template for more information
 
