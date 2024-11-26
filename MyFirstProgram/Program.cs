@@ -6,15 +6,16 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            // constructor = A special method in a class
-            //               Same name as the class name
-            //               Can be used to assign arguments to fields when creating an object
+            // static = Modifier to declare a static member, which belongs to the class itself
+            //          rather than to any specific object
 
-            Car car1 = new Car("Ford", "Mustang", 2022, "red");
-            Car car2 = new Car("Chevy", "Corvette", 2021, "blue");
+            Car car1 = new Car("Mustang");
+            Car car2 = new Car("Corvette");
+            Car car3 = new Car("Lamborghini");
             
-            car1.Drive();
-            car2.Drive();
+            Console.WriteLine(Car.numberOfCars);
+            
+            Car.StartRace();
         
             Console.ReadKey();
         }
@@ -22,22 +23,18 @@ namespace MyFirstProgram
 
     class Car
     {
-        private String make;
         private String model;
-        private int year;
-        private String Color;
+        public static int numberOfCars;
 
-        public Car(String make, String model, int year, String Color)
+        public Car(String model)
         {
-            this.make = make;
             this.model = model;
-            this.year = year;
-            this.Color = Color;
+            numberOfCars++;
         }
 
-        public void Drive()
+        public static void StartRace()
         {
-            Console.WriteLine("You drive the " + make + " " + model);
+            Console.WriteLine("The race has begun");
         }
     }
 }
