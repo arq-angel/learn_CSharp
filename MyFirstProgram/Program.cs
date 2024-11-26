@@ -6,35 +6,54 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            // ToString() = converts an object to its string representation so that it is suitable for display
+            // polymorphism = Greek word that means to have many forms
+            //                Objects can be identified by more than one type
+            //                Ex. A Dog is also: Canine, Animal, Organism
+            
+            Car car = new Car();
+            Bicycle bicycle = new Bicycle();
+            Boat boat = new Boat();
+            
+            Vehicle[] vehicles = { car, bicycle, boat };
 
-            Car car = new Car("Chevy", "Corvette", 2022, "blue");
-
-            // Console.WriteLine(car.ToString());
-            Console.WriteLine(car);
+            foreach (Vehicle vehicle in vehicles)
+            {
+                vehicle.Go();
+            }
             
             Console.ReadKey();
         }
     }
 
-    class Car
+    class Vehicle
     {
-        private String make;
-        private String model;
-        private int year;
-        private String color;
-
-        public Car(String make, String model, int year, String color)
+        public virtual void Go()
         {
-            this.make = make;
-            this.model = model;
-            this.year = year;
-            this.color = color;
+            
         }
+    }
 
-        public override string ToString()
+    class Car : Vehicle
+    {
+        public override void Go()
         {
-            return "This is a " + make + " " + model;
+            Console.WriteLine("The car is moving");
+        }
+    }
+
+    class Bicycle : Vehicle
+    {
+        public override void Go()
+        {
+            Console.WriteLine("The bicycle is moving");
+        }
+    }
+
+    class Boat : Vehicle
+    {
+        public override void Go()
+        {
+            Console.WriteLine("The boat is moving");
         }
     }
 }
