@@ -6,45 +6,39 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            Car[] garage1 = new Car[3];
-            
-            Car car1 = new Car("Mustang");
-            Car car2 = new Car("Corvette");
-            Car car3 = new Car("Lamborghini");
-            
-            garage1[0] = car1;
-            garage1[1] = car2;
-            garage1[2] = car3;
-            
-            Car[] garage2 = {new Car("Mustang"), new Car("Corvette"), new Car("Lamborghini")};
-            
-            /*
-            Console.WriteLine(garage[0].model);
-            Console.WriteLine(garage[1].model);
-            Console.WriteLine(garage[2].model);
-            */
+            Car car1 = new Car("Mustang", "red");
 
-            foreach (Car car in garage1)
-            {
-                Console.WriteLine(car.model);
-            }
+            Car car2 = Copy(car1);
             
-            foreach (Car car in garage2)
-            {
-                Console.WriteLine(car.model);
-            }
+            // ChangeColor(car1, "silver");
+            
+            // Console.WriteLine(car1.color + " " + car1.model);
+            
+            Console.WriteLine(car2.color + " " + car2.model);
             
             Console.ReadKey();
+        }
+
+        public static Car Copy(Car car)
+        {
+            return new Car(car.model, car.color);
+        }
+
+        public static void ChangeColor(Car car, string color)
+        {
+            car.color = color;
         }
     }
 
     class Car
     {
         public String model;
+        public String color;
 
-        public Car(String model)
+        public Car(String model, String color)
         {
             this.model = model;
+            this.color = color;
         }
     }
 }
