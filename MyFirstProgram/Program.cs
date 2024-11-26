@@ -1,12 +1,29 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-// foreach loop = a simpler way to iterate over an array, but it's less flexible
-
-String[] cars = { "BMW", "Mustang", "Corvette" };
-
-foreach (String car in cars)
+class MyFirstProgram
 {
-    Console.WriteLine(car);
+    static void Main(string[] args)
+    {
+        // method = performs a section of code, whenever it's called "invoked".
+        //          benefit = Let's us reuse code w/o writing it multiple times
+
+        String name = "John";
+        int age = 20;
+        
+        singHappyBirthday(name, age);
+
+        Console.ReadKey();
+    }
+
+    static void singHappyBirthday(String birthdayBoy, int yearsOld)
+    {
+        Console.WriteLine("Happy Birthday to you!");
+        Console.WriteLine("Happy Birthday to you!");
+        Console.WriteLine("Happy Birthday to dear " + birthdayBoy + "!");
+        Console.WriteLine("You are " + yearsOld + " years old!");
+        Console.WriteLine("Happy Birthday to you!");
+        Console.WriteLine("");
+    }
 }
 
-Console.ReadKey();
+
