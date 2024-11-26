@@ -2,20 +2,36 @@
 {
     static void Main(string[] args)
     {
-        // string interpolation = allows us to insert variables into a string literal
-        //                        precede a string literal with $
-        //                        {} are placeholders
+        String[] ford = { "Mustang", "F-150", "Explorer" };
+        String[] chevy = {"Corvette", "Camaro", "Silverado"};
+        String[] toyota = {"Corolla", "Camry", "Rav4"};
 
-        String firstName = "John";
-        String lastName = "Doe";
-        int age = 26;
-        
-        // Console.WriteLine("Hello " + firstName + " " + lastName + ".");
-        // Console.WriteLine("You are " + age + " years old.");
-        
-        Console.WriteLine($"Hello {firstName} {lastName}.");
-        Console.WriteLine($"You are {age, -10} years old.");
+        String[,] parkingLot =
+        {
+            { "Mustang", "F-150", "Explorer" }, 
+            { "Corvette", "Camaro", "Silverado" }, 
+            {"Corolla", "Camry", "Rav4"}
+        }; 
 
+        parkingLot[0, 2] = "Fusion";
+        parkingLot[2, 0] = "Tacoma";
+
+        /*
+         foreach (String car in parkingLot)
+        {
+            Console.WriteLine(car);
+        }
+        */
+
+        for (int i = 0; i < parkingLot.GetLength(0); i++)
+        {
+            for (int j = 0; j < parkingLot.GetLength(1); j++)
+            {
+                Console.Write(parkingLot[i, j] + " ");
+            }
+            Console.WriteLine();
+        }
+        
         Console.ReadKey();
     }
 }
