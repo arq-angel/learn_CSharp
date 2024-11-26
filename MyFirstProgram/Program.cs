@@ -4,26 +4,30 @@ class MyFirstProgram
 {
     static void Main(string[] args)
     {
-        // method = performs a section of code, whenever it's called "invoked".
-        //          benefit = Let's us reuse code w/o writing it multiple times
+        // return = returns data back to the place where a method is invoked
 
-        String name = "John";
-        int age = 20;
+        double x;
+        double y;
+        double result;
         
-        singHappyBirthday(name, age);
+        Console.Write("Enter in number 1: ");
+        x = Convert.ToDouble(Console.ReadLine());
+        
+        Console.Write("Enter in number 2: ");
+        y = Convert.ToInt32(Console.ReadLine());
+
+        result = Multiply(x, y);
+        
+        Console.WriteLine(result);
 
         Console.ReadKey();
     }
 
-    static void singHappyBirthday(String birthdayBoy, int yearsOld)
+    static double Multiply(double x, double y)
     {
-        Console.WriteLine("Happy Birthday to you!");
-        Console.WriteLine("Happy Birthday to you!");
-        Console.WriteLine("Happy Birthday to dear " + birthdayBoy + "!");
-        Console.WriteLine("You are " + yearsOld + " years old!");
-        Console.WriteLine("Happy Birthday to you!");
-        Console.WriteLine("");
+        return x * y;
     }
+    
 }
 
 
