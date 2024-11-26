@@ -2,28 +2,19 @@
 {
     static void Main(string[] args)
     {
-        // conditional operator = used in conditional assignment iif a condition is true/false
-        
-        // (condition) ? x : y
-        
-        double temperature = 20;
-        String message;
+        // string interpolation = allows us to insert variables into a string literal
+        //                        precede a string literal with $
+        //                        {} are placeholders
 
-        if (temperature >= 15)
-        {
-            message = "It's warm outside!";
-        }
-        else
-        {
-            message = "It's cold outside!";
-        }
-        Console.WriteLine(message);
+        String firstName = "John";
+        String lastName = "Doe";
+        int age = 26;
         
-        message = (temperature >= 15) ? "It's warm outside!" : "It's cold outside!";
+        // Console.WriteLine("Hello " + firstName + " " + lastName + ".");
+        // Console.WriteLine("You are " + age + " years old.");
         
-        Console.WriteLine(message);
-        
-        Console.WriteLine((temperature >= 15) ? "It's warm outside!" : "It's cold outside!");
+        Console.WriteLine($"Hello {firstName} {lastName}.");
+        Console.WriteLine($"You are {age, -10} years old.");
 
         Console.ReadKey();
     }
