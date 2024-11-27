@@ -7,19 +7,13 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            // getters & setters = add security to fields by encapsulation
-            //                     They're accessors found within properties
+            // Auto-Implemented properties = shortcut when no additional logic is required in the property
+            //                               you do not have to define a field for a property
+            //                               you only have to write get; and/or set; inside the property
+            
+            Car car = new Car("Porsche");
 
-            // properties = combine aspects of both fields and methods (share name with a field)
-            // get accessor = used to return the property value
-            // set accessor = used to assign a new value
-            // value keyword = defines the value being assigned by the set (parameter)
-
-            Car car = new Car(400);
-
-            car.Speed = 1000000000;
-
-            Console.WriteLine(car.Speed);
+            Console.WriteLine(car.Model);
 
             Console.ReadKey();
         }
@@ -27,28 +21,11 @@ namespace MyFirstProgram
 
     class Car
     {
-        private int speed;
-
-        public Car(int speed)
+        public String Model { get; set; }
+        
+        public Car(String model)
         {
-            Speed = speed;
-        }
-
-        public int Speed
-        {
-            get { return speed; } // read
-            set // writable
-            {
-                if (value > 500)
-                {
-                    speed = 500;
-                }
-                else
-                {
-                    speed = value;
-                }
-            }
-            
+            this.Model = model;
         }
     }
 }
