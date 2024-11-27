@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace MyFirstProgram
 {
@@ -7,29 +8,46 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            // generic = "not specific to a particular data type"
-            //           add <T> or <Thing> or <Whatever> to: classes, methods, fields, etc.
-            //           allows for code reusability for different data types
+            // thread = an execution path of a program
+            //          We can use multiple threads to perform,
+            //          different tasks of our program at the same time.
+            //          Current thread running is "main" thread
+            //          using System.Threading;
             
-            int[] intArray = { 1, 2, 3, 4, 5 };
-            double[] doubleArray = { 1.1, 2.2, 3.3, 4.4, 5.5 };
-            String[] stringArray = { "one", "two", "three", "four", "five" };
-            
-            DisplayElements(intArray);
-            DisplayElements(doubleArray);
-            DisplayElements(stringArray);
+            Thread mainThread = Thread.CurrentThread;
+            mainThread.Name = "Main Thread";
+            // Console.WriteLine(mainThread.Name);
 
+            Thread thread1 = new Thread(() => CountDown("Timer #1"));   // lambda expression same as arrow function or closure or empty function
+            Thread thread2 = new Thread(() => CountUp("Timer #2"));
+            thread1.Start();
+            thread2.Start();
+
+            Console.WriteLine(mainThread.Name + " is complete!");
+            
             Console.ReadKey();
         }
 
-        public static void DisplayElements<Thing>(Thing[] array)
+        public static void CountDown(String name)
         {
-            foreach (Thing item in array)
+            for (int i = 10; i >= 0; i--)
             {
-                Console.Write(item + " ");
+                Console.WriteLine("Timer #1: " + i + " seconds");
+                Thread.Sleep(1000);
             }
 
-            Console.WriteLine();
+            Console.WriteLine("Timer #1 is complete!");
+        }
+
+        public static void CountUp(String name)
+        {
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.WriteLine("Timer #2: " + i + " seconds");
+                Thread.Sleep(1000);
+            }
+
+            Console.WriteLine("Timer #2 is complete!");
         }
     }
 }
