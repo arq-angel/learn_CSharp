@@ -7,48 +7,41 @@ namespace MyFirstProgram
     {
         static void Main(string[] args)
         {
-            // List = data structure that represents a list of objects that can be accessed by index
-            //        Similar to array, but can dynamically increase/decrease in size
-            //        using System.Collections.Generic;
+            List<Player> players = new List<Player>();
 
-            List<String> food = new List<String>();
-            
-            food.Add("Soda");
-            food.Add("Pizza");
-            food.Add("Hamburger");
-            food.Add("HotDog");
-            food.Add("Fries");
-            food.Add("Soda");
-            
-            // food.Remove("Soda");
-            
-            // food.Insert(0, "Sushi");
-            
-            // Console.WriteLine(food[0]);
+            /*Player player1 = new Player("Chad");
+            Player player2 = new Player("Steve");
+            Player player3 = new Player("Karen");
 
-            // Console.WriteLine(food.Count);
+            players.Add(player1);
+            players.Add(player2);
+            players.Add(player3);*/
 
-            // Console.WriteLine(food.IndexOf("Hamburger"));
+            players.Add(new Player("Chad"));
+            players.Add(new Player("Steve"));
+            players.Add(new Player("Karen"));
 
-            // Console.WriteLine(food.LastIndexOf("Soda"));
-
-            // Console.WriteLine(food.Contains("Pizza"));
-            
-            // food.Sort();
-
-            // food.Reverse();
-            
-            // food.Clear();
-            
-            String[] foodArray = food.ToArray();
-            
-            foreach (String item in food)
+            foreach (Player player in players)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(player);
             }
-            
-            
+
             Console.ReadKey();
+        }
+    }
+
+    class Player
+    {
+        public string username;
+
+        public Player(String username)
+        {
+            this.username = username;
+        }
+
+        public override string ToString()
+        {
+            return username;
         }
     }
 }
